@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Memet & Titin — Undangan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Jost:wght@300;400&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf6f1;--bg2:#f1e6e0;--ink:#4a3b3b;--soft:#9b8585;--accent:#c78b8b;--sage:#a9b8a0;--card:#fffdfb;--line:#e8d8d3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#262021;--bg2:#322a2b;--ink:#f3e8e4;--soft:#bfa9a6;--accent:#dba2a2;--sage:#8a9a83;--card:#2d2526;--line:#4a3e3f}}
+:root[data-theme="dark"]{--bg:#262021;--bg2:#322a2b;--ink:#f3e8e4;--soft:#bfa9a6;--accent:#dba2a2;--sage:#8a9a83;--card:#2d2526;--line:#4a3e3f}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+h1,h2,p,b,span,div{overflow-wrap:break-word}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Jost,system-ui,sans-serif;font-weight:300;text-align:center;overflow-x:hidden}
+section{padding:80px 28px;max-width:540px;margin:0 auto}
+h1,h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;margin:0}
+.script{font-family:'Pinyon Script',cursive;color:var(--accent);font-size:2rem}
+.small{letter-spacing:.22em;text-transform:uppercase;font-size:.66rem;color:var(--soft)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;max-width:none;background:radial-gradient(ellipse at 50% 0,var(--bg2),var(--bg) 70%)}
+.ring{width:150px;height:150px;border-radius:50%;border:1px solid var(--accent);display:grid;place-items:center;margin-bottom:28px;position:relative}
+.ring::after{content:"";position:absolute;inset:8px;border-radius:50%;border:1px solid var(--line)}
+.ring span{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-style:italic;color:var(--accent)}
+.hero h1{font-size:clamp(2.2rem,10vw,3.6rem);margin:14px 0 10px;font-weight:500;line-height:1.15}
+.hero h1 .n{display:block}
+.amp{font-family:'Pinyon Script',cursive;color:var(--accent);font-size:.9em;padding:0 .1em}
+.scroll{margin-top:44px;color:var(--soft);font-size:.7rem;letter-spacing:.3em;animation:float 2.4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-7px)}}
+.orn{display:flex;align-items:center;gap:12px;justify-content:center;margin:22px 0;color:var(--sage)}
+.orn::before,.orn::after{content:"";width:60px;height:1px;background:var(--sage)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:160px 160px 24px 24px;padding:84px 22px 34px;box-shadow:0 14px 40px rgba(150,110,110,.12)}
+.card p{margin:.5em 0;font-size:.95rem;line-height:1.8}
+.names{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:26px 0;border-block:1px solid var(--line)}
+.row div{padding:16px 8px}.row div+div{border-left:1px solid var(--line)}
+.row b{display:block;font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:500;margin-top:6px}
+.btn{display:inline-block;margin-top:14px;padding:13px 32px;border:1px solid var(--accent);color:var(--accent);text-decoration:none;letter-spacing:.2em;font-size:.72rem;text-transform:uppercase;border-radius:999px;transition:.3s}
+.btn:hover{background:var(--accent);color:#fff}
+.love{max-width:none;background:linear-gradient(var(--bg),var(--bg2),var(--bg));position:relative;overflow:hidden}
+.heart{width:min(230px,64vw);margin:26px 0;animation:beat 2.2s infinite}
+@keyframes beat{0%,100%{transform:scale(1)}20%{transform:scale(1.07)}40%{transform:scale(1)}}
+.pt{position:absolute;bottom:-30px;width:10px;height:14px;background:var(--accent);opacity:.4;border-radius:70% 0 70% 0;animation:rise 9s linear infinite}
+@keyframes rise{to{transform:translateY(-560px) rotate(200deg);opacity:0}}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+.fr{aspect-ratio:3/4;border-radius:999px 999px 14px 14px;overflow:hidden;border:1px solid var(--line);display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--soft);transition:transform .4s}
+.fr img{width:100%;height:100%;object-fit:cover}
+.fr:nth-child(even){margin-top:28px}
+.fr:hover{transform:translateY(-6px)}
+.rv{opacity:0;transform:translateY(28px);transition:all 1s ease}
+.rv.in{opacity:1;transform:none}
+footer{padding:40px 24px 80px;color:var(--soft);font-size:.8rem;letter-spacing:.2em}
+#music{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:46px;height:46px;border-radius:50%;border:1px solid var(--accent);background:var(--card);color:var(--accent);font-size:1.2rem;cursor:pointer;z-index:10;box-shadow:0 6px 18px rgba(150,110,110,.2)}
+#music.on{animation:spin 6s linear infinite}
+#music.off::after{content:"";position:absolute;left:11px;right:11px;top:50%;height:1.5px;background:var(--accent);transform:rotate(-40deg)}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="ring"><span>M&T</span></div>
+  <div class="small">The Wedding of</div>
+  <h1><span class="n">Memet</span><span class="amp n">&amp;</span><span class="n">Titin</span></h1>
+  <div class="script">kami mengundang Anda</div>
+  <div class="scroll">SCROLL</div>
+</header>
+
+<section class="rv">
+  <div class="small">Dengan penuh syukur</div>
+  <div class="orn">❦</div>
+  <div class="card">
+    <p>Merupakan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu pada hari bahagia</p>
+    <p class="names">Memet &amp; Titin</p>
+    <div class="row">
+      <div><span class="small">Tanggal</span><b>Sabtu, 15 Nov 2026</b></div>
+      <div><span class="small">Pukul</span><b>15.00 WIB</b></div>
+    </div>
+    <p><span class="small">Lokasi</span><br><b style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500">Kediaman Memet &amp; Titin</b><br>Jl. Kenanga No. 12, Bogor</p>
+    <a class="btn" href="https://wa.me/6281234567890?text=Halo,%20saya%20akan%20hadir%20di%20acara%20Memet%20%26%20Titin">Konfirmasi Kehadiran</a>
+  </div>
+</section>
+
+<section class="love rv" id="love">
+  <div class="script">with love</div>
+  <svg class="heart" viewBox="0 0 100 90" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M50 84 C12 56 2 36 2 24 C2 10 13 2 26 2 C37 2 46 8 50 17 C54 8 63 2 74 2 C87 2 98 10 98 24 C98 36 88 56 50 84Z" fill="var(--accent)" fill-opacity=".14"/><path d="M50 74 C20 52 11 36 11 25 C11 14 19 9 27 9 C37 9 45 15 50 24 C55 15 63 9 73 9 C81 9 89 14 89 25 C89 36 80 52 50 74Z" stroke-opacity=".5"/><text x="50" y="50" text-anchor="middle" font-family="Cormorant Garamond,serif" font-style="italic" font-size="20" fill="var(--accent)" stroke="none">M &amp; T</text></svg>
+  <h2 style="font-style:italic;font-size:1.9rem">Dua hati, satu cerita</h2>
+  <p style="color:var(--soft);margin-top:10px">Bersama, segalanya terasa lebih indah.</p>
+</section>
+
+<section class="rv">
+  <div class="small">Galeri</div>
+  <h2 style="margin-top:10px;font-size:2rem">Momen Kami</h2>
+  <div class="gallery" id="gallery"></div>
+</section>
+
+<button id="music" aria-label="Putar atau jeda musik">♪</button>
+<footer>MEMET &amp; TITIN</footer>
+
+<script>
+// Ganti dengan foto asli: { src: 'data:image/jpeg;base64,...' }
+var photos=[{g:'#f1e0da,#e3c9c4'},{g:'#dfe6d9,#c4d0bb'},{g:'#ecdfe6,#d9c3cf'},{g:'#efe6d6,#dccfb4'}];
+var g=document.getElementById('gallery');
+photos.forEach(function(p,i){
+  var d=document.createElement('div');d.className='fr';
+  if(p.src){d.innerHTML='<img src="'+p.src+'" alt="">';}
+  else{var c=p.g.split(',');d.style.background='linear-gradient(160deg,'+c[0]+','+c[1]+')';d.textContent='foto '+(i+1);}
+  g.appendChild(d);
+});
+// MUSIK: isi SONG dengan data URI mp3, contoh 'data:audio/mpeg;base64,...'. Jika kosong, dipakai melodi kotak musik sederhana.
+var SONG='';
+var mbtn=document.getElementById('music'),playing=false,userOff=false,ctx,timer,audio;
+var NT=[523.25,659.25,783.99,659.25,587.33,698.46,880,698.46,523.25,659.25,783.99,1046.5,987.77,783.99,659.25,523.25],ni=0;
+function tick(){var t=ctx.currentTime,o=ctx.createOscillator(),g=ctx.createGain();o.type='sine';o.frequency.value=NT[ni++%NT.length];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.12,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+1.6);o.connect(g);g.connect(ctx.destination);o.start(t);o.stop(t+1.7);}
+function on(){if(playing)return;playing=true;mbtn.classList.add('on');mbtn.classList.remove('off');if(!SONG&&!timer){tick();timer=setInterval(tick,520);}}
+function start(){if(playing||userOff)return;try{if(SONG){audio=audio||new Audio(SONG);audio.loop=true;audio.volume=.6;audio.play().then(on).catch(function(){});}else{ctx=ctx||new (window.AudioContext||window.webkitAudioContext)();ctx.resume().then(function(){if(ctx.state==='running')on();}).catch(function(){});}}catch(e){}}
+function stop(){if(audio)audio.pause();clearInterval(timer);timer=null;playing=false;mbtn.classList.remove('on');mbtn.classList.add('off');}
+mbtn.addEventListener('click',function(e){e.stopPropagation();if(playing){userOff=true;stop();}else{userOff=false;start();}});
+['scroll','wheel','touchstart','touchend','pointerdown','keydown'].forEach(function(ev){window.addEventListener(ev,function(){if(ev==='scroll'&&window.scrollY<30)return;start();},{passive:true});});
+var love=document.getElementById('love');
+for(var i=0;i<12;i++){var h=document.createElement('div');h.className='pt';h.style.left=(Math.random()*95)+'%';h.style.animationDelay=(Math.random()*9)+'s';love.appendChild(h);}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
