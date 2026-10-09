@@ -129,12 +129,12 @@ footer{padding:40px 24px 80px;color:var(--soft);font-size:.8rem;letter-spacing:.
 
 <script>
 // Ganti dengan foto asli: { src: 'data:image/jpeg;base64,...' }
-var photos=[{g:'#f1e0da,#e3c9c4'},{g:'#dfe6d9,#c4d0bb'},{g:'#ecdfe6,#d9c3cf'},{g:'#efe6d6,#dccfb4'}];
+var photos=[{src:'foto1.jpg',g:'#f1e0da,#e3c9c4'},{src:'foto2.jpg',g:'#dfe6d9,#c4d0bb'},{src:'foto3.jpg',g:'#ecdfe6,#d9c3cf'},{src:'foto4.jpg',g:'#efe6d6,#dccfb4'}];
 var g=document.getElementById('gallery');
 photos.forEach(function(p,i){
   var d=document.createElement('div');d.className='fr';
-  if(p.src){d.innerHTML='<img src="'+p.src+'" alt="">';}
-  else{var c=p.g.split(',');d.style.background='linear-gradient(160deg,'+c[0]+','+c[1]+')';d.textContent='foto '+(i+1);}
+  var c=p.g.split(',');d.style.background='linear-gradient(160deg,'+c[0]+','+c[1]+')';d.textContent='foto '+(i+1);
+  if(p.src){var im=new Image();im.alt='';im.onload=function(){d.textContent='';d.style.background='none';d.appendChild(im);};im.src=p.src;}
   g.appendChild(d);
 });
 // MUSIK: isi SONG dengan data URI mp3, contoh 'data:audio/mpeg;base64,...'. Jika kosong, dipakai melodi kotak musik sederhana.
