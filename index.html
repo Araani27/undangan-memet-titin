@@ -51,6 +51,13 @@ h1,h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;margin:0}
 .rv{opacity:0;transform:translateY(28px);transition:all 1s ease}
 .rv.in{opacity:1;transform:none}
 footer{padding:40px 24px 80px;color:var(--soft);font-size:.8rem;letter-spacing:.2em}
+.box{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px 22px;margin-top:26px;box-shadow:0 14px 40px rgba(150,110,110,.12)}
+.num{font-family:'Cormorant Garamond',serif;font-size:1.9rem;letter-spacing:.08em;margin:12px 0 4px;color:var(--accent)}
+.box p{margin:.4em 0}
+.box input,.box textarea{width:100%;font:inherit;font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:12px;outline:none}
+.box input:focus,.box textarea:focus{border-color:var(--accent)}
+.box textarea{min-height:110px;resize:vertical}
+.box .btn{background:none;cursor:pointer;font-family:inherit;margin-top:6px}
 #music{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:46px;height:46px;border-radius:50%;border:1px solid var(--accent);background:var(--card);color:var(--accent);font-size:1.2rem;cursor:pointer;z-index:10;box-shadow:0 6px 18px rgba(150,110,110,.2)}
 #music.on{animation:spin 6s linear infinite}
 #music.off::after{content:"";position:absolute;left:11px;right:11px;top:50%;height:1.5px;background:var(--accent);transform:rotate(-40deg)}
@@ -95,6 +102,28 @@ footer{padding:40px 24px 80px;color:var(--soft);font-size:.8rem;letter-spacing:.
   <div class="gallery" id="gallery"></div>
 </section>
 
+<section class="rv">
+  <div class="small">Tanda Kasih</div>
+  <h2 style="margin:10px 0 14px;font-size:2rem">Kirim Whiskas</h2>
+  <p style="color:var(--soft);line-height:1.8;font-size:.95rem">Doa restu Anda adalah hadiah terbaik. Namun bila berkenan memberi tanda kasih, kami dengan senang hati menerima sekantong Whiskas.</p>
+  <div class="box">
+    <span class="small">Bank Bang Emok</span>
+    <div class="num" id="rek">1234 5678 9012</div>
+    <p>a.n. Memet &amp; Titin</p>
+    <button class="btn" id="copy" type="button">Salin Nomor</button>
+  </div>
+</section>
+
+<section class="rv">
+  <div class="small">Ucapan</div>
+  <h2 style="margin:10px 0 0;font-size:2rem">Doa &amp; Ucapan</h2>
+  <div class="box">
+    <input id="nm" type="text" placeholder="Nama Anda" maxlength="60">
+    <textarea id="msg" placeholder="Tulis ucapan dan doa untuk Memet &amp; Titin" maxlength="500"></textarea>
+    <button class="btn" id="send" type="button">Kirim Ucapan</button>
+  </div>
+</section>
+
 <button id="music" aria-label="Putar atau jeda musik">♪</button>
 <footer>MEMET &amp; TITIN</footer>
 
@@ -118,6 +147,13 @@ function start(){if(playing||userOff)return;try{if(SONG){audio=audio||new Audio(
 function stop(){if(audio)audio.pause();clearInterval(timer);timer=null;playing=false;mbtn.classList.remove('on');mbtn.classList.add('off');}
 mbtn.addEventListener('click',function(e){e.stopPropagation();if(playing){userOff=true;stop();}else{userOff=false;start();}});
 ['scroll','wheel','touchstart','touchend','pointerdown','keydown'].forEach(function(ev){window.addEventListener(ev,function(){if(ev==='scroll'&&window.scrollY<30)return;start();},{passive:true});});
+var WA='6281234567890';
+document.getElementById('copy').addEventListener('click',function(){var b=this,t=document.getElementById('rek').textContent.replace(/\s/g,'');
+ function ok(){b.textContent='Tersalin \u2713';setTimeout(function(){b.textContent='Salin Nomor';},2000);}
+ try{navigator.clipboard.writeText(t).then(ok).catch(function(){b.textContent=document.getElementById('rek').textContent;});}catch(e){b.textContent=document.getElementById('rek').textContent;}});
+document.getElementById('send').addEventListener('click',function(){var n=document.getElementById('nm').value.trim(),m=document.getElementById('msg').value.trim();
+ if(!n||!m){alert('Mohon isi nama dan ucapan terlebih dahulu.');return;}
+ window.open('https://wa.me/'+WA+'?text='+encodeURIComponent('Ucapan dari '+n+':\n'+m),'_blank');});
 var love=document.getElementById('love');
 for(var i=0;i<12;i++){var h=document.createElement('div');h.className='pt';h.style.left=(Math.random()*95)+'%';h.style.animationDelay=(Math.random()*9)+'s';love.appendChild(h);}
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.15});
